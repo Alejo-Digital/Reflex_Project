@@ -9,8 +9,8 @@ import Reflex_Project.Styles.styles as styles
 from Reflex_Project.Styles.styles import Size as Size
 
 
-class State(rx.State):
-    pass
+#class State(rx.State):
+    #pass
 
 
 def index() -> rx.Component:
