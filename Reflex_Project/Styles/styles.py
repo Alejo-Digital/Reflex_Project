@@ -34,7 +34,7 @@ BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
     "font_weight": FontWeight.LIGHT.value,
     "background_color": Color.BACKGROUND.value,
-    rx.heading: {
+    rx.chakra.heading: {
         "size": "lg",
         "color": Tcolor.HEADER.value,
         "font_family": Font.TITLE.value,
@@ -43,7 +43,7 @@ BASE_STYLE = {
         "text_align": "start",
         "width": "100%"
     },
-    rx.Button:{
+    rx.chakra.Button:{
         "width": "100%",
         "height": "100%",
         "dosplay": "block",
@@ -57,7 +57,7 @@ BASE_STYLE = {
             "color": Color.CONTENT.value
         }
     },
-    rx.Link: {
+    rx.chakra.Link: {
         "text_decoration": "none",
         "_hover": {}
     }

@@ -14,10 +14,10 @@ from Reflex_Project.Styles.styles import Size as Size
 
 
 def index() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         navbar(),
-        rx.center(
-            rx.vstack(
+        rx.chakra.center(
+            rx.chakra.vstack(
                 header(),
                 links(),
                 max_width=styles.MAX_WIDTH,
@@ -39,7 +39,7 @@ app.add_page(
     title="Alejo_Digital | Analisis de Datos y Programacion Python",
     image="favicon.ico"
 )
-app.compile()
+#app.compile()
 
 
 # Run the app

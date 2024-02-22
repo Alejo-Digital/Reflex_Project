@@ -5,6 +5,7 @@ LINKEDIN_URL = "https://www.linkedin.com/in/alejo-digital/"
 PORTAFOLIO_URL = "https://alejodigital.dev"
 GITHUB_URL = "https://github.com/Alejo-Digital"
 BLOG_URL = "https://alejo-digital.blogspot.com/"
+REDDIT_URL = "https://www.reddit.com/user/Alejo_Digital"
 
 # Redes Sociales
 TWITTER_URL = "https://twitter.com/Alejo_Digital"

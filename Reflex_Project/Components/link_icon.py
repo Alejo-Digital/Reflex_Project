@@ -3,8 +3,8 @@ from Reflex_Project.Styles.styles import Size as Size
 
 
 def link_icon(image: str, url: str) -> rx.Component:
-    return rx.link(
-        rx.image(
+    return rx.chakra.link(
+        rx.chakra.image(
             src=image,
             width=Size.DEFAULT.value
         ),

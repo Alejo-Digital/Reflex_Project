@@ -6,9 +6,9 @@ from Reflex_Project.Styles.colors import TextColor as Tcolor
 
 
 def navbar() -> rx.Component:
-    return rx.hstack(
-        rx.box(
-            rx.span("alejo_digital"),
+    return rx.chakra.hstack(
+        rx.chakra.box(
+            rx.chakra.span("alejo_digital"),
             style=styles.navbar_title_style_01,
             color=Tcolor.BODY.value
         ),

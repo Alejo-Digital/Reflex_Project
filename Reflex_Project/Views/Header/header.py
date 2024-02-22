@@ -9,9 +9,9 @@ from Reflex_Project.Styles.colors import Color as Color
 import Reflex_Project.Constants as const
 
 def header() -> rx.Component:
-    return rx.vstack(
-        rx.hstack(
-            rx.avatar(
+    return rx.chakra.vstack(
+        rx.chakra.hstack(
+            rx.chakra.avatar(
                 name="Alejandro Guerrero", 
                 size="xl",
                 bg=Color.CONTENT.value,
@@ -21,18 +21,18 @@ def header() -> rx.Component:
                 border="4px",
                 border_color=Color.PRIMARY.value
             ),
-            rx.vstack(
-                rx.heading(
+            rx.chakra.vstack(
+                rx.chakra.heading(
                     "Alejandro Guerrero",
                     size="lg",
                     padding_x=Size.DEFAULT.value
                 ),
-                rx.text("@alejo_digital",
+                rx.chakra.text("@alejo_digital",
                     margin_top=Size.ZERO.value,
                     color=Tcolor.BODY.value,
                     padding_x=Size.MEDIUM.value
                 ),
-                rx.hstack(
+                rx.chakra.hstack(
                     link_icon(
                        "instagram.svg",
                        const.INSTAGRAM_URL
@@ -54,15 +54,15 @@ def header() -> rx.Component:
             padding_left=Size.LARGE.value,
             padding_y=Size.DEFAULT.value
         ),
-        rx.flex(
+        rx.chakra.flex(
             info_text("+1", "año de experiencia"),
-            rx.spacer(),
+            rx.chakra.spacer(),
             info_text("+5", "proyectos freelance"),
-            rx.spacer(),
+            rx.chakra.spacer(),
             info_text("+200", "horas de estudio"),
             width="100%"
         ),
-        rx.text(
+        rx.chakra.text(
             """
             Soy Politólogo con un Diplomado en Business Intelligence 
             y una Especializacion en Data Analyst.

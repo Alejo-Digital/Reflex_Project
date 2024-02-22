@@ -5,8 +5,8 @@ from Reflex_Project.Styles.colors import Color as Color
 
 
 def info_text(title: str, body: str) -> rx.Component:
-    return rx.box(
-        rx.span(
+    return rx.chakra.box(
+        rx.chakra.span(
             title, 
             font_weight="bold", 
             color=Color.PRIMARY.value
