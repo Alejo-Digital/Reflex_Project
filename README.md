@@ -43,7 +43,9 @@ Con estos pasos, culminé con éxito mi primer proyecto, adquiriendo habilidades
 NOTA
 
 adjunto las URLs de los 2 despliegues en servidor que realice:
+
 https://alejodigital.reflex.run/
+
 https://alejodigital.vercel.app/
 
 
