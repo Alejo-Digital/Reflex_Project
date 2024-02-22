@@ -40,6 +40,12 @@ Finalmente, logré desplegar mi proyecto tanto en el servidor por defecto de Ref
 
 Con estos pasos, culminé con éxito mi primer proyecto, adquiriendo habilidades valiosas y consolidando mi comprensión de tecnologías clave en el desarrollo web.
 
+NOTA
+
+adjunto las URLs de los 2 despliegues en servidor que realice:
+https://alejodigital.reflex.run/
+https://alejodigital.vercel.app/
+
 
 
 Agradezco a @MoureDev por el apoyo y a Dios por hacerlo posible.
