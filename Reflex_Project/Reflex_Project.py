@@ -39,7 +39,7 @@ app.add_page(
     title="Alejo_Digital | Analisis de Datos y Programacion Python",
     image="favicon.ico"
 )
-#app.compile()
+#bogapp.compile()
 
 
 # Run the app
