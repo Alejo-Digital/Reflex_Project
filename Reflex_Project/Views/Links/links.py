@@ -6,7 +6,7 @@ import Reflex_Project.Constants as const
 
 
 def links() -> rx.Component:
-    return rx.chakra.vstack(
+    return rx.vstack(
         title("Portafolio"),
         link_button(
             "LinkedIn",
@@ -26,18 +26,6 @@ def links() -> rx.Component:
             "github.svg",
             const.GITHUB_URL
         ),
-        #link_button(
-        #    "Reddit",
-        #    "mis comunidades",
-        #    "reddit.svg",
-        #    const.REDDIT_URL
-        #),
-        #link_button(
-        #    "Portafolio",
-        #    "mis proyectos",
-        #    "briefcase-solid.svg",
-        #    const.PORTAFOLIO_URL
-        #),
         title("Contacto"),
         link_button(
             "Email",
@@ -54,11 +42,11 @@ def links() -> rx.Component:
         title("Colaborar"),
         link_button(
             "PayPal",
-            "Apoyame con tu donacion",
+            "Apóyame con tu donación",
             "paypal.svg",
             const.PAYPAL_URL
         ),
         width="100%",
-        spacing=Size.DEFAULT.value,
+        spacing="3",
         align_items="start"
     )

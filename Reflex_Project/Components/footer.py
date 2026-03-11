@@ -1,40 +1,51 @@
 import reflex as rx
 import datetime
-import Reflex_Project.Constants as Const
-from Reflex_Project.Styles.styles import Size as Size
-from Reflex_Project.Styles.colors import TextColor as Tcolor 
-from Reflex_Project.Styles.colors import Color as Color
-
+import Reflex_Project.Constants as const
+from Reflex_Project.Styles import styles
 
 
 def footer() -> rx.Component:
-    return rx.chakra.vstack(
-        rx.chakra.link(
-            rx.chakra.image(
+    return rx.vstack(
+        rx.link(
+            rx.image(
                 src="Reflex.svg",
-                height=Size.BIG.value,
-                bg=Tcolor.HEADER.value,
-                padding="2px",
-                border="4px",
-                ),
-            href=Const.REFLEX_URL,
+                height=styles.Size.BIG.value,
+                # Forzamos el logo a ser Verde Terminal (#238636) con filtros CSS
+                filter="brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(395%) hue-rotate(81deg) brightness(88%) contrast(90%)",
+                transition="transform 0.3s ease-in-out",
+                _hover={
+                    "transform": "scale(1.1)"
+                }
+            ),
+            href=const.REFLEX_URL,
             is_external=True
         ),
-        rx.chakra.text(
-            f"@ 2023-{datetime.date.today().year} @Alejo_Digital By Alejandro Guerrero ∆",
-            font_size=Size.MEDIUM.value,
-            margin_top=Size.LARGE.value
+        rx.vstack(
+            rx.text(
+                f"© 2023-{datetime.date.today().year} @Alejo_Digital by Alejandro Guerrero",
+                font_size=styles.Size.MEDIUM.value,
+                color=styles.Color.PRIMARY.value, # Verde Terminal
+                text_align="center"
             ),
-        rx.chakra.text(
-            "This entire website is made in Reflex-Python with <3 from Bogotá to the World.",
-            font_size=Size.MEDIUM.value,
-            margin_top=Size.ZERO.value,
-            padding_x=Size.LARGE.value,
+            rx.text(
+                "This entire website is made in Reflex-Python with <3 from Bogotá to the World.",
+                font_size=styles.Size.MEDIUM.value,
+                color=styles.Color.PRIMARY.value, # Verde Terminal
+                text_align="center"
+            ),
+            rx.text(
+                "Apocalipsis 22:21",
+                font_size=styles.Size.MEDIUM.value,
+                color=styles.Color.PRIMARY.value, # Verde Terminal
+                font_weight="bold"
+            ),
+            spacing="1",
+            align="center",
+            width="100%",
+            margin_top=styles.Size.LARGE.value
         ),
-        rx.chakra.text(
-            "Apocalipsis 22:21",
-            font_size=Size.MEDIUM.value,
-        ),
-        padding_y=Size.VERY_BIG.value,
-        color=Tcolor.FOOTER.value
+        padding_y=styles.Size.VERY_BIG.value,
+        align="center",
+        width="100%",
+        padding_x=styles.Size.DEFAULT.value
     )

@@ -6,7 +6,25 @@ from .fonts import Font, FontWeight
 
 
 # Constants
-MAX_WIDTH = "600px"
+MAX_WIDTH = "560px"
+
+# Colores Reactivos (Variables Dinámicas)
+TEXT_COLOR_HEADER = rx.color_mode_cond(light=Tcolor.HEADER_LIGHT.value, dark=Tcolor.HEADER.value)
+TEXT_COLOR_BODY = rx.color_mode_cond(light=Tcolor.BODY_LIGHT.value, dark=Tcolor.BODY.value)
+
+BG_COLOR_PAGE = rx.color_mode_cond(light=Color.BACKGROUND_LIGHT.value, dark=Color.BACKGROUND.value)
+BG_COLOR_CONTENT = rx.color_mode_cond(light=Color.CONTENT_LIGHT.value, dark=Color.CONTENT.value)
+BG_COLOR_NAVBAR = rx.color_mode_cond(light=Color.CONTENT_LIGHT.value, dark=Color.CONTENT.value)
+
+# Colores de bordes (Variables, no strings)
+BORDER_COLOR = rx.color_mode_cond(light=Color.BORDER_LIGHT.value, dark=Color.BORDER_DARK.value)
+
+BUTTON_HOVER_STYLE = {
+    "background_color": Color.PRIMARY.value,
+    "color": "#FFFFFF",
+    "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+    "border": f"1px solid {Color.PRIMARY.value}"
+}
 
 
 #Fonts
@@ -18,7 +36,7 @@ STYLESHEETS=[
 
 # Sizes
 class Size(Enum):
-    ZERO = "0px 1important"
+    ZERO = "0px !important"
     NANO = "0.125em"
     MICRO = "0.25em"
     SMALL = "0.5em"
@@ -33,45 +51,23 @@ class Size(Enum):
 BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
     "font_weight": FontWeight.LIGHT.value,
-    "background_color": Color.BACKGROUND.value,
-    rx.chakra.heading: {
-        "size": "lg",
-        "color": Tcolor.HEADER.value,
-        "font_family": Font.TITLE.value,
-        "font_weight": FontWeight.MEDIUM.value,
-        "white_space": "normal",
-        "text_align": "start",
-        "width": "100%"
-    },
-    rx.chakra.Button:{
-        "width": "100%",
-        "height": "100%",
-        "dosplay": "block",
-        "padding": Size.SMALL.value,
-        "border_radius": Size.DEFAULT.value,
-        "color": Tcolor.HEADER.value,
-        "background_color": Color.CONTENT.value,
-        "text_align": "start",
-        "_hover": {
-            "background_color": Color.SECONDARY.value,
-            "color": Color.CONTENT.value
-        }
-    },
-    rx.chakra.Link: {
+    rx.link: {
         "text_decoration": "none",
         "_hover": {}
     }
+}
+
+# Define el estilo del contenedor principal de la página
+PAGE_STYLE = {
+    "background_color": BG_COLOR_PAGE,
+    "min_height": "100vh",
+    "width": "100%"
 }
 
 navbar_title_style_01 = dict(
     font_family=Font.LOGO.value,
     font_size=Size.LARGE.value,
     font_weight=FontWeight.MEDIUM.value
-)
-
-navbar_title_style_02 = dict(
-    font_family="Source Code Pro",
-    font_size=Size.LARGE.value
 )
 
 title_style = dict(
@@ -83,12 +79,9 @@ button_title_style = dict(
     font_family=Font.TITLE.value,
     font_size=Size.DEFAULT.value,
     font_weight=FontWeight.MEDIUM.value,
-    color=Tcolor.HEADER.value
-    )
+)
 
 button_body_style = dict(
     font_weight=FontWeight.LIGHT.value,
     font_size=Size.MEDIUM.value,
-    color=Tcolor.BODY.value,
-
-    )
+)

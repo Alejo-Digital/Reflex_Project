@@ -1,9 +1,10 @@
 import reflex as rx
-import Reflex_Project.Styles.styles as styles
+from Reflex_Project.Styles.styles import title_style, TEXT_COLOR_HEADER
 
 def title(text: str) -> rx.Component:
-    return rx.chakra.heading(
+    return rx.heading(
         text,
-        size="lg",
-        style=styles.title_style
+        size="6",
+        style=title_style,
+        color=TEXT_COLOR_HEADER
         )

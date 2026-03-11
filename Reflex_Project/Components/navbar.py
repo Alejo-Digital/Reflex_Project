@@ -1,21 +1,23 @@
 import reflex as rx
-import Reflex_Project.Styles.styles as styles
-from Reflex_Project.Styles.styles import Size as Size
-from Reflex_Project.Styles.colors import Color as Color
-from Reflex_Project.Styles.colors import TextColor as Tcolor
+from Reflex_Project.Styles import styles
+from Reflex_Project.Styles.colors import Color
 
 
 def navbar() -> rx.Component:
-    return rx.chakra.hstack(
-        rx.chakra.box(
-            rx.chakra.span("alejo_digital"),
+    return rx.hstack(
+        rx.box(
+            rx.text.span("alejo_digital", color=Color.PRIMARY.value),
             style=styles.navbar_title_style_01,
-            color=Tcolor.BODY.value
         ),
+        rx.spacer(),
+        rx.color_mode.button(),
         position="sticky",
-        bg=Color.CONTENT.value,
-        padding_x=Size.DEFAULT.value,
-        padding_y=Size.SMALL.value,
+        bg=styles.BG_COLOR_NAVBAR,
+        padding_x=styles.Size.DEFAULT.value,
+        padding_y=styles.Size.SMALL.value,
         z_index="999",
-        top="0"
+        top="0",
+        width="100%",
+        align="center",
+        border_bottom=f"1px solid {styles.BORDER_COLOR}"
     )
