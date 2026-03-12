@@ -4,7 +4,6 @@ from Reflex_Project.Components.info_text import info_text
 from Reflex_Project.Styles import styles
 from Reflex_Project.Styles.colors import Color
 import Reflex_Project.Constants as const
-from Reflex_Project.state import State
 
 
 def header() -> rx.Component:
@@ -54,7 +53,7 @@ def header() -> rx.Component:
             width="100%"
         ),
         rx.flex(
-            info_text(f"+{State.years_experience}", "año de experiencia"),
+            info_text(f"+{const.YEARS_EXPERIENCE}", "año de experiencia"),
             rx.spacer(),
             info_text(const.PROJECTS_COUNT, "proyectos freelance"),
             rx.spacer(),

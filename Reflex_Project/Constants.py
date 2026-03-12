@@ -41,3 +41,8 @@ PAYPAL_URL = "https://paypal.me/alejodigital22?country.x=CO&locale.x=es_XC"
 
 # Fechas
 START_DATE = "2024-02-14" # Puedes ajustar la fecha real aquí
+
+import datetime
+_start_date = datetime.date.fromisoformat(START_DATE)
+_today = datetime.date.today()
+YEARS_EXPERIENCE = _today.year - _start_date.year - ((_today.month, _today.day) < (_start_date.month, _start_date.day))
