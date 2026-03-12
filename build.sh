@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script de construcción para despliegue
+# Script de construcción para despliegue en Vercel
 set -e # Detener el script si ocurre algún error
 
 echo "--- Instalando dependencias ---"
@@ -8,11 +8,11 @@ python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
 
 echo "--- Inicializando Reflex ---"
-reflex init
+# Usamos python3 -m reflex para asegurar que encuentre el ejecutable
+python3 -m reflex init
 
 echo "--- Exportando Frontend (Static) ---"
-# Exportamos el frontend
-reflex export --frontend-only --no-zip
+python3 -m reflex export --frontend-only --no-zip
 
 # Preparamos la carpeta de salida para Vercel
 echo "--- Preparando carpeta public ---"
