@@ -1,9 +1,9 @@
 *.db
 *.py[cod]
+.env*.local
 .states
 .venv/
 .vercel
 .web
 __pycache__/
 assets/external/
-.env*.local

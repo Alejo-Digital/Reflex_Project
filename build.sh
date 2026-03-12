@@ -3,16 +3,25 @@
 # Script de construcción para despliegue en Vercel
 set -e # Detener el script si ocurre algún error
 
+echo "--- Instalando uv si no está presente ---"
+# Ya sabemos que uv está en el PATH de Vercel por los logs anteriores.
+
+echo "--- Creando entorno virtual con Python 3.12 ---"
+uv venv .venv --python 3.12
+
+echo "--- Activando entorno virtual ---"
+source .venv/bin/activate
+
 echo "--- Instalando dependencias ---"
-python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
+# Usamos uv pip para mayor velocidad y compatibilidad
+export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
+uv pip install -r reqs.txt
 
 echo "--- Inicializando Reflex ---"
-# Usamos python3 -m reflex para asegurar que encuentre el ejecutable
-python3 -m reflex init
+python -m reflex init
 
 echo "--- Exportando Frontend (Static) ---"
-python3 -m reflex export --frontend-only --no-zip
+python -m reflex export --frontend-only --no-zip
 
 # Preparamos la carpeta de salida para Vercel
 echo "--- Preparando carpeta public ---"
