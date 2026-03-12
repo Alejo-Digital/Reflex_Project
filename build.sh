@@ -4,19 +4,19 @@
 set -e # Detener el script si ocurre algún error
 
 echo "--- Instalando dependencias ---"
-pip install --upgrade pip
-pip install -r requirements.txt
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 
 echo "--- Inicializando Reflex ---"
 reflex init
 
 echo "--- Exportando Frontend (Static) ---"
-# Limpiamos exportaciones anteriores
-rm -rf .web/_static
+# Exportamos el frontend
 reflex export --frontend-only --no-zip
 
-# Si usas un servidor tipo Vercel o Netlify, el contenido suele ir a una carpeta 'dist' o 'public'
-# Aquí lo preparamos para ser servido estáticamente
+# Preparamos la carpeta de salida para Vercel
+echo "--- Preparando carpeta public ---"
+rm -rf public
 mkdir -p public
 cp -r .web/_static/* public/
 

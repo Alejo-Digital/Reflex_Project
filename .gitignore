@@ -1,8 +1,8 @@
-assets/external/
-.states
 *.db
 *.py[cod]
+.states
 .venv/
 .vercel
 .web
 __pycache__/
+assets/external/
